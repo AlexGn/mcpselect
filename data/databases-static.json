@@ -1,0 +1,50 @@
+{
+  "servers": [
+    {
+      "name": "SQLite MCP",
+      "maker": "jparkerweb",
+      "pricing": "Free",
+      "url": "https://github.com/jparkerweb/mcp-sqlite?ref=curated-mcp",
+      "description": "File-based SQL database. Zero setup, zero server process. Perfect for local prototyping, caching, and small datasets. The simplest database MCP server to get running.",
+      "pros": ["No server process to manage", "Single file database", "Works offline", "Fast for small datasets"],
+      "cons": ["Not for concurrent writes", "No user management", "Limited to single-file size"],
+      "useCase": "Local prototyping, caching, small datasets, offline-first apps",
+      "config": {
+        "claude": "{\"mcpServers\": {\"sqlite\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-sqlite@latest\"], \"env\": {\"SQLITE_DB_PATH\": \"/path/to/your.db\"}}}}",
+        "cursor": "{\"mcpServers\": {\"sqlite\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-sqlite@latest\"], \"env\": {\"SQLITE_DB_PATH\": \"/path/to/your.db\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"sqlite\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-sqlite@latest\"],\n      \"env\": {\n        \"SQLITE_DB_PATH\": \"/path/to/your.db\"\n      }\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "PostgreSQL MCP",
+      "maker": "kristofer84",
+      "pricing": "Free",
+      "url": "https://github.com/kristofer84/mcp-postgres?ref=curated-mcp",
+      "description": "Full-featured PostgreSQL MCP server. Supports schema introspection, queries, updates, and deletes. Requires a running PostgreSQL instance.",
+      "pros": ["Full SQL support", "Schema introspection", "Connection pooling support", "Production-grade"],
+      "cons": ["Requires running PostgreSQL server", "Connection configuration needed", "Heavier than SQLite"],
+      "useCase": "Production apps, complex queries, multi-user systems, data warehousing",
+      "config": {
+        "claude": "{\"mcpServers\": {\"postgres\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-postgres@latest\"], \"env\": {\"DB_HOST\": \"localhost\", \"DB_PORT\": \"5432\", \"DB_USER\": \"your_user\", \"DB_PASSWORD\": \"your_password\", \"DB_NAME\": \"your_database\", \"DB_SSL_MODE\": \"disable\"}}}}",
+        "cursor": "{\"mcpServers\": {\"postgres\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-postgres@latest\"], \"env\": {\"DB_HOST\": \"localhost\", \"DB_PORT\": \"5432\", \"DB_USER\": \"your_user\", \"DB_PASSWORD\": \"your_password\", \"DB_NAME\": \"your_database\", \"DB_SSL_MODE\": \"disable\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"postgres\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-postgres@latest\"],\n      \"env\": {\n        \"DB_HOST\": \"localhost\",\n        \"DB_PORT\": \"5432\",\n        \"DB_USER\": \"your_user\",\n        \"DB_PASSWORD\": \"your_password\",\n        \"DB_NAME\": \"your_database\",\n        \"DB_SSL_MODE\": \"disable\"\n      }\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Redis MCP",
+      "maker": "itapi",
+      "pricing": "Free",
+      "url": "https://github.com/itapi/mcp-redis?ref=curated-mcp",
+      "description": "In-memory data store with key-value operations. Lightning fast for caching, sessions, and real-time data. Requires a running Redis server.",
+      "pros": ["Sub-millisecond latency", "Simple key-value API", "Pub/sub support", "Popular for caching"],
+      "cons": ["Data not persistent by default", "Requires Redis server", "Limited query capabilities", "Korean documentation"],
+      "useCase": "Caching, session storage, real-time leaderboards, message queuing",
+      "config": {
+        "claude": "{\"mcpServers\": {\"redis\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-redis@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"redis\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-redis@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"redis\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-redis@latest\"]\n    }\n  }\n}"
+      }
+    }
+  ],
+  "failed": []
+}

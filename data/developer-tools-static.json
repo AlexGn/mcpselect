@@ -1,0 +1,50 @@
+{
+  "servers": [
+    {
+      "name": "Filesystem MCP",
+      "maker": "Anthropic",
+      "pricing": "Free",
+      "url": "https://github.com/modelcontextprotocol/servers?ref=curated-mcp",
+      "description": "Official Anthropic filesystem server. Read, write, edit, and list files in a sandboxed directory. The most fundamental developer tool — every project needs file access.",
+      "pros": ["Official Anthropic project", "Sandboxed to specified directory", "12+ file operations", "Works offline"],
+      "cons": ["Requires explicit allowed directories", "No recursive glob without directory_tree", "Path resolution can be tricky"],
+      "useCase": "File manipulation, project scaffolding, reading configs, batch file operations",
+      "config": {
+        "claude": "{\"mcpServers\": {\"filesystem\": {\"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem@latest\", \"/path/to/allowed/dir\"]}}}",
+        "cursor": "{\"mcpServers\": {\"filesystem\": {\"command\": \"npx\", \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem@latest\", \"/path/to/allowed/dir\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"filesystem\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem@latest\", \"/path/to/allowed/dir\"]\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Shell MCP",
+      "maker": "matildepark-hdr",
+      "pricing": "Free",
+      "url": "https://github.com/matilde-mcp/mcp-shell?ref=curated-mcp",
+      "description": "Run shell commands through MCP. Execute any CLI tool, script, or system command. Dangerous but powerful — use with auto-approve caution.",
+      "pros": ["Execute any shell command", "Lightweight (1 tool)", "Fast startup", "Universal compatibility"],
+      "cons": ["Security risk — can execute arbitrary commands", "No output streaming", "Limited error handling", "Depends on system environment"],
+      "useCase": "Running build scripts, package managers, git commands, system administration",
+      "config": {
+        "claude": "{\"mcpServers\": {\"shell\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-shell@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"shell\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-shell@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"shell\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-shell@latest\"]\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Git MCP",
+      "maker": "quanle96",
+      "pricing": "Free",
+      "url": "https://github.com/quanle96/mcp-git?ref=curated-mcp",
+      "description": "Git operations through MCP — status, diff, commit, branch, stash, log. Turns your AI into a git-aware assistant that can review changes, create commits, and manage branches.",
+      "pros": ["14 git commands exposed", "Works on any git repo", "No remote API needed", "Native git integration"],
+      "cons": ["Requires git CLI installed", "Single tool with many aliases", "Some commands need working directory context", "Limited to local operations"],
+      "useCase": "Code review, commit management, branch operations, diff analysis, stash management",
+      "config": {
+        "claude": "{\"mcpServers\": {\"git\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-git@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"git\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-git@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"git\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-git@latest\"]\n    }\n  }\n}"
+      }
+    }
+  ],
+  "failed": []
+}

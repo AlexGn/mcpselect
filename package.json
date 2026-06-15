@@ -1,0 +1,25 @@
+{
+  "name": "mcpselect-benchmarks",
+  "version": "1.0.0",
+  "description": "Open-source benchmark harness and raw data for MCP Select",
+  "type": "module",
+  "scripts": {
+    "test:browser-automation": "node tests/browser-automation/run.mjs",
+    "test:databases": "node tests/databases/run.mjs",
+    "test:developer-tools": "node tests/developer-tools/run.mjs",
+    "test:search": "node tests/search/run.mjs",
+    "validate": "python3 scripts/validate-methodology.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@playwright/test": "^1.60.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexGn/mcpselect.git"
+  }
+}

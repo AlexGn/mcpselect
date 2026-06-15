@@ -1,0 +1,188 @@
+{
+  "date": "2026-06-08T13:27:02.275Z",
+  "category": "developer-tools",
+  "test_framework_version": "2.0.0",
+  "mcp_sdk_version": "1.0.0",
+  "test_environment": "macOS, Node.js v25.7.0",
+  "servers": [
+    {
+      "server": "Filesystem MCP",
+      "tool_count": 14,
+      "tests": [
+        {
+          "name": "list",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"[FILE] config.json\"}],\"structuredContent\":{\"content\":\"[FILE] config.json\"}}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "read",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"test\\\":true,\\\"benchmark\\\":\\\"mcp\\\"}\"}],\"structuredContent\":{\"content\":\"{\\\"test\\\":true,\\\"benchmark\\\":\\\"mcp\\\"}\"}}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "write",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Successfully wrote to /private/tmp/claude-501/mcp-dev-test-ZMKss3/benchmark.txt\"}],\"structuredContent\":{\"content\":\"Successfully wrote to /private/tmp/claude-501/mcp-dev-test-ZMKss3/benchmark.txt\"}}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "execute",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Successfully wrote to /private/tmp/claude-501/mcp-dev-test-ZMKss3/benchmark2.txt\"}],\"structuredContent\":{\"content\":\"Successfully wrote to /private/tmp/claude-501/mcp-dev-test-ZMKss3/benchmark2.txt\"}}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "info",
+          "status": "passed",
+          "latency_ms": 12,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"[FILE] benchmark.txt                        18 B\\n[FILE] benchmark2.txt                       23 B\\n[FILE] config.json                          31 B\\n\\nTotal: 3 files, 0 directories\\nCombined size: 72 B\"}],\"structuredContent\":{\"content\":\"[FILE] benchmark.txt                        18 B\\n[FILE] benchmark2.txt                       23 B\\n[FILE] config.json                          31 B\\n\\nTotal: 3 files, 0 directories\\nCombined size: 72 B\"}}",
+          "error": null,
+          "reason": null
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 100,
+        "avg_latency_ms": 4,
+        "p50_latency_ms": 2,
+        "p90_latency_ms": 12
+      },
+      "connect_time_ms": 1764,
+      "package": "@modelcontextprotocol/server-filesystem@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    },
+    {
+      "server": "Shell MCP",
+      "tool_count": 1,
+      "tests": [
+        {
+          "name": "list",
+          "status": "passed",
+          "latency_ms": 270,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"benchmark.txt\\nbenchmark2.txt\\nconfig.json\",\"mimeType\":\"text/plain\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "read",
+          "status": "passed",
+          "latency_ms": 272,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"test\\\":true,\\\"benchmark\\\":\\\"mcp\\\"}\",\"mimeType\":\"text/plain\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "write",
+          "status": "passed",
+          "latency_ms": 89,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"written\",\"mimeType\":\"text/plain\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "execute",
+          "status": "passed",
+          "latency_ms": 101,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"appended\",\"mimeType\":\"text/plain\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "info",
+          "status": "passed",
+          "latency_ms": 118,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"2\",\"mimeType\":\"text/plain\"}]}",
+          "error": null,
+          "reason": null
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 100,
+        "avg_latency_ms": 170,
+        "p50_latency_ms": 118,
+        "p90_latency_ms": 272
+      },
+      "connect_time_ms": 982,
+      "package": "mcp-shell@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    },
+    {
+      "server": "Git MCP",
+      "tool_count": 15,
+      "tests": [
+        {
+          "name": "list",
+          "status": "passed",
+          "latency_ms": 332,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"On branch main\\nChanges not staged for commit:\\n  (use \\\"git add <file>...\\\" to update what will be committed)\\n  (use \\\"git restore <file>...\\\" to discard changes in working directory)\\n\\tmodified:   app/categories/communication/page.tsx\\n\\tmodified:   lib/data.ts\\n\\tmodified:   public/data/browser-automation-results.json\\n\\tmodified:   public/data/databases-results.json\\n\\tmodified:   public/data/developer-tools-results.json\\n\\tmodified:   public/data/search-",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "read",
+          "status": "passed",
+          "latency_ms": 266,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"c78cce433cfe1caaf24d03601832a8af05ddd33f Alex Guyenne Sun Jun 7 21:18:48 2026 +0300 feat: Search category benchmark infrastructure + Tavily web_search works free\\n14dcc57b147d1eae269f0ae120e35988b148938f Alex Guyenne Sat Jun 6 20:39:20 2026 +0300 feat: Phase 2 trust signals — badges, pass rate bars, latency, curated lists\\ne4b9f88fa1d8c4f0a30608ed00be4d1cc2abeab8 Alex Guyenne Thu Jun 4 22:35:30 2026 +0300 fix: skip tests when preConnect fails (Browserbase sessi",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "write",
+          "status": "skipped",
+          "reason": "No adapter mapping for this task",
+          "latency_ms": 0
+        },
+        {
+          "name": "execute",
+          "status": "skipped",
+          "reason": "No adapter mapping for this task",
+          "latency_ms": 0
+        },
+        {
+          "name": "info",
+          "status": "passed",
+          "latency_ms": 207,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"c78cce433cfe1caaf24d03601832a8af05ddd33f Alex Guyenne Sun Jun 7 21:18:48 2026 +0300 feat: Search category benchmark infrastructure + Tavily web_search works free\"}]}",
+          "error": null,
+          "reason": null
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 2,
+        "pass_rate": 60,
+        "avg_latency_ms": 268,
+        "p50_latency_ms": 266,
+        "p90_latency_ms": 332
+      },
+      "connect_time_ms": 1172,
+      "package": "mcp-git@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    }
+  ]
+}

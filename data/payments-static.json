@@ -1,0 +1,74 @@
+{
+  "servers": [
+    {
+      "name": "Stripe Official MCP",
+      "maker": "Stripe",
+      "pricing": "Free",
+      "url": "https://docs.stripe.com/mcp?ref=curated-mcp",
+      "description": "Official remote MCP server from Stripe. Interact with Stripe API via OAuth or restricted API keys. Supports customers, payments, subscriptions, refunds, and more.",
+      "pros": [
+        "Official first-party server",
+        "OAuth + restricted API key support",
+        "20+ tools: customers, payments, subscriptions, invoices"
+      ],
+      "cons": [
+        "Requires Stripe account + API key",
+        "Remote-only — no local process",
+        "Treasury features still in preview"
+      ],
+      "useCase": "Payment processing, subscription management, billing automation",
+      "config": {
+        "claude": "// Requires STRIPE_SECRET_KEY or OAuth\n{\"mcpServers\": {\"stripe\": {\"command\": \"npx\", \"args\": [\"-y\", \"@stripe/mcp@latest\"], \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}}}}",
+        "cursor": "{\"mcpServers\": {\"stripe\": {\"command\": \"npx\", \"args\": [\"-y\", \"@stripe/mcp@latest\"], \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"stripe\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@stripe/mcp@latest\"],\n      \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "mcp-server-stripe",
+      "maker": "theihtisham",
+      "pricing": "Free",
+      "url": "https://www.npmjs.com/package/@theihtisham/mcp-server-stripe?ref=curated-mcp",
+      "description": "Community Stripe MCP server with 35+ tools, 5 resources, 5 prompts. Comprehensive coverage including MRR/ARR reporting, churn analysis, and checkout sessions.",
+      "pros": [
+        "35+ tools — more than official",
+        "Revenue reporting: MRR, ARR, churn, LTV",
+        "Webhook management tools"
+      ],
+      "cons": [
+        "Requires STRIPE_SECRET_KEY",
+        "Community-maintained — not official",
+        "More complex than official server"
+      ],
+      "useCase": "Revenue analytics, billing automation, financial reporting",
+      "config": {
+        "claude": "// Requires STRIPE_SECRET_KEY\n{\"mcpServers\": {\"stripe\": {\"command\": \"npx\", \"args\": [\"-y\", \"@theihtisham/mcp-server-stripe@latest\"], \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}}}}",
+        "cursor": "{\"mcpServers\": {\"stripe\": {\"command\": \"npx\", \"args\": [\"-y\", \"@theihtisham/mcp-server-stripe@latest\"], \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"stripe\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@theihtisham/mcp-server-stripe@latest\"],\n      \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "stripe-billing-mcp",
+      "maker": "CSOAI-ORG",
+      "pricing": "Freemium",
+      "url": "https://github.com/CSOAI-ORG/stripe-billing-mcp?ref=curated-mcp",
+      "description": "Python-based Stripe MCP focused on billing operations. Customers, subscriptions, invoices, checkout sessions, and revenue metrics. Free tier: 10 writes/day.",
+      "pros": [
+        "Billing-focused: subscriptions, invoices, checkout",
+        "Revenue metrics: MRR, ARR, churn",
+        "Free tier available"
+      ],
+      "cons": [
+        "Requires STRIPE_SECRET_KEY",
+        "Free tier limited to 10 writes/day",
+        "Python — requires pip install"
+      ],
+      "useCase": "Billing operations, subscription management, revenue tracking",
+      "config": {
+        "claude": "// Requires STRIPE_SECRET_KEY\n{\"mcpServers\": {\"stripe-billing\": {\"command\": \"python\", \"args\": [\"-m\", \"stripe_billing_mcp\"], \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}}}}",
+        "cursor": "{\"mcpServers\": {\"stripe-billing\": {\"command\": \"python\", \"args\": [\"-m\", \"stripe_billing_mcp\"], \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"stripe-billing\": {\n      \"command\": \"python\",\n      \"args\": [\"-m\", \"stripe_billing_mcp\"],\n      \"env\": {\"STRIPE_SECRET_KEY\": \"sk_test_...\"}\n    }\n  }\n}"
+      }
+    }
+  ],
+  "failed": []
+}

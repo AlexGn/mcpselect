@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Browser Automation Test Page</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1 { color: #1a1a1a; }
+    .section {
+      margin: 24px 0;
+      padding: 16px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin: 12px 0 4px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    button {
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button:hover { background: #1d4ed8; }
+    #click-result {
+      margin-top: 12px;
+      padding: 12px;
+      background: #dcfce7;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      color: #14532d;
+      display: none;
+    }
+    #click-result.visible { display: block; }
+    #form-result.visible { display: block; }
+    .readonly-area {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f5f5f4;
+      border-radius: 6px;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="page-heading">MCP Browser Automation Test Page</h1>
+  <p id="page-description">
+    This page provides deterministic interactive elements for benchmarking
+    MCP browser-automation servers. It requires no network and never changes.
+  </p>
+
+  <div class="section" id="click-section">
+    <h2>Click Test</h2>
+    <button id="click-button" aria-label="Run click test">
+      Click Me
+    </button>
+    <div id="click-result" role="status" aria-live="polite">
+      Button was clicked successfully
+    </div>
+  </div>
+
+  <div class="section" id="form-section">
+    <h2>Form Fill Test</h2>
+    <form id="test-form" onsubmit="event.preventDefault(); document.getElementById('form-result').classList.add('visible');">
+      <label for="test-input">Text Input</label>
+      <input
+        id="test-input"
+        name="testInput"
+        type="text"
+        placeholder="Type here..."
+        aria-label="Test text input"
+      />
+
+      <label for="test-textarea">Textarea</label>
+      <textarea
+        id="test-textarea"
+        name="testTextarea"
+        placeholder="Enter multiple lines..."
+        aria-label="Test textarea"
+      ></textarea>
+
+      <label for="test-select">Select Dropdown</label>
+      <select id="test-select" name="testSelect" aria-label="Test select dropdown">
+        <option value="">Choose an option</option>
+        <option value="a">Option A</option>
+        <option value="b">Option B</option>
+        <option value="c">Option C</option>
+      </select>
+
+      <button id="submit-button" type="submit" aria-label="Submit test form">
+        Submit
+      </button>
+    </form>
+    <div id="form-result" role="status" aria-live="polite" style="display:none; margin-top:12px; padding:12px; background:#dbeafe; border:1px solid #93c5fd; border-radius:6px; color:#1e3a8a;">
+      Form submitted successfully
+    </div>
+  </div>
+
+  <div class="section" id="state-section">
+    <h2>Live State</h2>
+    <div class="readonly-area" id="live-state">
+      Waiting for interaction...
+    </div>
+  </div>
+
+  <script>
+    const clickButton = document.getElementById('click-button');
+    const clickResult = document.getElementById('click-result');
+    const liveState = document.getElementById('live-state');
+    const testInput = document.getElementById('test-input');
+    const testTextarea = document.getElementById('test-textarea');
+    const testSelect = document.getElementById('test-select');
+
+    function updateState() {
+      const data = {
+        inputValue: testInput.value,
+        textareaValue: testTextarea.value,
+        selectValue: testSelect.value,
+        clicked: clickResult.classList.contains('visible'),
+        timestamp: new Date().toISOString()
+      };
+      liveState.textContent = JSON.stringify(data, null, 2);
+    }
+
+    clickButton.addEventListener('click', () => {
+      clickResult.classList.add('visible');
+      updateState();
+    });
+
+    testInput.addEventListener('input', updateState);
+    testTextarea.addEventListener('input', updateState);
+    testSelect.addEventListener('change', updateState);
+
+    // Expose helper for evaluate-based assertions
+    window.getTestState = () => ({
+      inputValue: testInput.value,
+      textareaValue: testTextarea.value,
+      selectValue: testSelect.value,
+      clicked: clickResult.classList.contains('visible')
+    });
+  </script>
+</body>
+</html>

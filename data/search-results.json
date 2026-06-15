@@ -1,0 +1,104 @@
+{
+  "date": "2026-06-08T13:26:56.688Z",
+  "category": "search",
+  "test_framework_version": "2.0.0",
+  "mcp_sdk_version": "1.29.0",
+  "test_environment": "macOS, Node.js v25.7.0",
+  "servers": [
+    {
+      "server": "Tavily MCP",
+      "tool_count": 5,
+      "tests": [
+        {
+          "name": "web_search",
+          "status": "passed",
+          "latency_ms": 675,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Detailed Results:\\n\\nTitle: The 2026-07-28 MCP Specification Release Candidate\\nURL: https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate\\nContent: *   [A Stateless Protocol](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate#a-stateless-protocol). *   [Before and after](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate#before-and-after). *   [Stateless protocol, stateful applications](https://blog.m",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "extract",
+          "status": "failed",
+          "latency_ms": 140,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Tavily API error: [{\\\"type\\\":\\\"missing\\\",\\\"loc\\\":[\\\"body\\\",\\\"urls\\\"],\\\"msg\\\":\\\"Field required\\\",\\\"input\\\":{}}]\\nDocumentation: https://docs.tavily.com/documentation/api-reference/endpoint/extract\"}],\"isError\":true}",
+          "error": null,
+          "reason": "Validation failed"
+        }
+      ],
+      "overall": {
+        "total_tests": 2,
+        "passed": 1,
+        "failed": 1,
+        "skipped": 0,
+        "pass_rate": 50,
+        "avg_latency_ms": 408,
+        "p50_latency_ms": 675,
+        "p90_latency_ms": 675
+      },
+      "connect_time_ms": 1834,
+      "package": "tavily-mcp@latest",
+      "auth_triage": "requires-auth",
+      "env_var": "TAVILY_API_KEY",
+      "discovery_status": "ready"
+    },
+    {
+      "server": "Exa MCP",
+      "tool_count": 2,
+      "tests": [
+        {
+          "name": "web_search",
+          "status": "failed",
+          "latency_ms": 223,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"web_search_exa error (401): API key must be provided as an argument or as an environment variable (EXA_API_KEY)\\nTimestamp: 2026-06-08T13:26:54.598Z\"}],\"isError\":true}",
+          "error": null,
+          "reason": "Validation failed"
+        },
+        {
+          "name": "extract",
+          "status": "failed",
+          "latency_ms": 3,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"MCP error -32602: Input validation error: Invalid arguments for tool web_fetch_exa: [\\n  {\\n    \\\"code\\\": \\\"invalid_type\\\",\\n    \\\"expected\\\": \\\"array\\\",\\n    \\\"received\\\": \\\"undefined\\\",\\n    \\\"path\\\": [\\n      \\\"urls\\\"\\n    ],\\n    \\\"message\\\": \\\"Required\\\"\\n  }\\n]\"}],\"isError\":true}",
+          "error": null,
+          "reason": "Validation failed"
+        }
+      ],
+      "overall": {
+        "total_tests": 2,
+        "passed": 0,
+        "failed": 2,
+        "skipped": 0,
+        "pass_rate": 0,
+        "avg_latency_ms": 113,
+        "p50_latency_ms": 223,
+        "p90_latency_ms": 223
+      },
+      "connect_time_ms": 1064,
+      "package": "exa-mcp-server@latest",
+      "auth_triage": "requires-auth",
+      "env_var": "EXA_API_KEY",
+      "discovery_status": "ready"
+    },
+    {
+      "server": "Brave Search MCP",
+      "package": "brave-search-mcp-server@latest",
+      "tool_count": 0,
+      "tests": [],
+      "overall": {
+        "total_tests": 0,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 0,
+        "avg_latency_ms": 0,
+        "p50_latency_ms": 0,
+        "p90_latency_ms": 0
+      },
+      "connect_time_ms": 528,
+      "discovery_status": "error",
+      "error": "MCP error -1: Connection closed",
+      "auth_triage": "requires-auth",
+      "env_var": "BRAVE_API_KEY"
+    }
+  ]
+}

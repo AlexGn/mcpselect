@@ -1,0 +1,205 @@
+{
+  "date": "2026-06-08T13:27:13.097Z",
+  "category": "browser-automation",
+  "test_framework_version": "2.0.0",
+  "mcp_sdk_version": "1.29.0",
+  "test_environment": "macOS, Node.js v25.7.0",
+  "test_page_url": "http://127.0.0.1:54166",
+  "public_test_page_url": null,
+  "servers": [
+    {
+      "server": "Playwright MCP",
+      "tool_count": 23,
+      "tests": [
+        {
+          "name": "navigate",
+          "status": "passed",
+          "latency_ms": 7038,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"### Ran Playwright code\\n```js\\nawait page.goto('http://127.0.0.1:54166');\\n```\\n### Page\\n- Page URL: http://127.0.0.1:54166/\\n- Page Title: MCP Browser Automation Test Page\\n- Console: 1 errors, 0 warnings\\n### Snapshot\\n- [Snapshot](.playwright-mcp/page-2026-06-08T13-26-58-570Z.yml)\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "screenshot",
+          "status": "passed",
+          "latency_ms": 607,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"### Result\\n- [Screenshot of viewport](.playwright-mcp/page-2026-06-08T13-26-59-499Z.png)\\n### Ran Playwright code\\n```js\\n// Screenshot viewport and save it as .playwright-mcp/page-2026-06-08T13-26-59-499Z.png\\nawait page.screenshot({\\n  path: '.playwright-mcp/page-2026-06-08T13-26-59-499Z.png',\\n  scale: 'css',\\n  type: 'png'\\n});\\n```\\n### Events\\n- New console entries: .playwright-mcp/console-2026-06-08T13-26-57-349Z.log#L1\"},{\"type\":\"image\",\"data\":\"iVBORw0",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "snapshot",
+          "status": "passed",
+          "latency_ms": 15,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"### Page\\n- Page URL: http://127.0.0.1:54166/\\n- Page Title: MCP Browser Automation Test Page\\n- Console: 1 errors, 0 warnings\\n### Snapshot\\n```yaml\\n- generic [active] [ref=e1]:\\n  - heading \\\"MCP Browser Automation Test Page\\\" [level=1] [ref=e2]\\n  - paragraph [ref=e3]: This page provides deterministic interactive elements for benchmarking MCP browser-automation servers. It requires no network and never changes.\\n  - generic [ref=e4]:\\n    - heading \\\"Click ",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "click",
+          "status": "passed",
+          "latency_ms": 1393,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"### Ran Playwright code\\n```js\\nawait page.locator('#click-button').click();\\n```\\n### Page\\n- Page URL: http://127.0.0.1:54166/\\n- Page Title: MCP Browser Automation Test Page\\n- Console: 1 errors, 0 warnings\\n### Snapshot\\n- [Snapshot](.playwright-mcp/page-2026-06-08T13-27-02-089Z.yml)\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "fill",
+          "status": "passed",
+          "latency_ms": 165,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"### Ran Playwright code\\n```js\\nawait page.locator('#test-input').fill('MCP test input');\\n```\"}]}",
+          "error": null,
+          "reason": null
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 100,
+        "avg_latency_ms": 1844,
+        "p50_latency_ms": 607,
+        "p90_latency_ms": 7038
+      },
+      "connect_time_ms": 1789,
+      "package": "@playwright/mcp@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    },
+    {
+      "server": "Puppeteer MCP",
+      "tool_count": 7,
+      "tests": [
+        {
+          "name": "navigate",
+          "status": "passed",
+          "latency_ms": 832,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Navigated to http://127.0.0.1:54166\"}],\"isError\":false}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "screenshot",
+          "status": "passed",
+          "latency_ms": 43,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Screenshot 'test-screenshot' at 800x600\"},{\"type\":\"image\",\"data\":\"iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAIAAAAVFBUnAAAQAElEQVR4nOzdCbwN9f/H8e+17/saKntRVFoUXUoiKllLq1IhaRUJ7flJG60KJUWWFpQsSbKUUkKRiGTLkn29tvt//8733/c3zVnuuffOtd3X83Ef9zFnzsycme/MfL+f+XznzMmWnJxsAAAAEFNiYuK2bdvimbJSpUpZDAAAAAJFgAUAABCwbAYAAACplDt37goVKhQoUEDDO3bsWLFixd69e927BFgAAACpkzdv3rPOOitr1qz2ZdGiRQsVKjR//vzdu3fbMXQRAgAApM6pp57qoitLLzXSvSSDBQAAkDoFCxYMH2m7Cy0CLAAAgNTJli1CBJU9e3Y3TBchAABAwAiwAAAAAka",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "snapshot",
+          "status": "passed",
+          "latency_ms": 3,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Result:\\n\\\"MCP Browser Automation Test Page MCP Browser Automation Test Page\\\\n\\\\nThis page provides deterministic interactive elements for benchmarking MCP browser-automation servers. It requires no network and never changes.\\\\n\\\\nClick Test\\\\nClick Me\\\\n\\\"\\nLogs:\\n\"}],\"isError\":false}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "click",
+          "status": "passed",
+          "latency_ms": 25,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Clicked #click-button\"}],\"isError\":false}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "fill",
+          "status": "passed",
+          "latency_ms": 21,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Filled #test-input\"}],\"isError\":false}",
+          "error": null,
+          "reason": null
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 100,
+        "avg_latency_ms": 185,
+        "p50_latency_ms": 25,
+        "p90_latency_ms": 832
+      },
+      "connect_time_ms": 1095,
+      "package": "@hisma/server-puppeteer@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    },
+    {
+      "server": "Firecrawl MCP",
+      "package": "firecrawl-mcp@latest",
+      "tool_count": 0,
+      "tests": [],
+      "overall": {
+        "total_tests": 0,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 0,
+        "avg_latency_ms": 0,
+        "p50_latency_ms": 0,
+        "p90_latency_ms": 0
+      },
+      "connect_time_ms": 1032,
+      "discovery_status": "error",
+      "error": "MCP error -1: Connection closed",
+      "auth_triage": "requires-auth",
+      "env_var": "FIRECRAWL_API_KEY"
+    },
+    {
+      "server": "Browserbase MCP",
+      "tool_count": 6,
+      "tests": [
+        {
+          "name": "navigate",
+          "status": "skipped",
+          "reason": "preConnect failed: session initialization required",
+          "latency_ms": 0
+        },
+        {
+          "name": "screenshot",
+          "status": "skipped",
+          "reason": "preConnect failed: session initialization required",
+          "latency_ms": 0
+        },
+        {
+          "name": "snapshot",
+          "status": "skipped",
+          "reason": "preConnect failed: session initialization required",
+          "latency_ms": 0
+        },
+        {
+          "name": "click",
+          "status": "skipped",
+          "reason": "preConnect failed: session initialization required",
+          "latency_ms": 0
+        },
+        {
+          "name": "fill",
+          "status": "skipped",
+          "reason": "preConnect failed: session initialization required",
+          "latency_ms": 0
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 5,
+        "pass_rate": 0,
+        "avg_latency_ms": 0,
+        "p50_latency_ms": 0,
+        "p90_latency_ms": 0
+      },
+      "connect_time_ms": 1266,
+      "package": "@browserbasehq/mcp@latest",
+      "auth_triage": "requires-auth",
+      "env_var": "BROWSERBASE_API_KEY",
+      "discovery_status": "ready"
+    }
+  ]
+}

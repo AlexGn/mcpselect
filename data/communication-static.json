@@ -1,0 +1,74 @@
+{
+  "servers": [
+    {
+      "name": "Nexus MCP",
+      "maker": "santoshakil",
+      "pricing": "Free",
+      "url": "https://github.com/santoshakil/nexus?ref=curated-mcp",
+      "description": "Pure Rust MCP server (~4MB binary) with 48 tools across Telegram, Gmail, WhatsApp, Slack, and Discord. No MCP SDK dependencies.",
+      "pros": [
+        "Single binary, no Node.js dependencies",
+        "48 tools across 5 communication channels",
+        "Pure Rust — fast and memory-safe"
+      ],
+      "cons": [
+        "Requires bot tokens for Slack/Discord",
+        "Gmail requires App Password",
+        "Self-hosted binary — no npx install"
+      ],
+      "useCase": "Cross-platform messaging, email automation, notifications",
+      "config": {
+        "claude": "// Requires bot tokens / App Passwords\n{\"mcpServers\": {\"nexus\": {\"command\": \"./nexus\", \"args\": [], \"env\": {\"SLACK_BOT_TOKEN\": \"xoxb-...\", \"GMAIL_APP_PASSWORD\": \"...\"}}}}",
+        "cursor": "{\"mcpServers\": {\"nexus\": {\"command\": \"./nexus\", \"args\": [], \"env\": {\"SLACK_BOT_TOKEN\": \"xoxb-...\", \"GMAIL_APP_PASSWORD\": \"...\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"nexus\": {\n      \"command\": \"./nexus\",\n      \"args\": [],\n      \"env\": {\"SLACK_BOT_TOKEN\": \"xoxb-...\", \"GMAIL_APP_PASSWORD\": \"...\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Neo MCP",
+      "maker": "heydryft",
+      "pricing": "Free",
+      "url": "https://github.com/heydryft/neo-mcp?ref=curated-mcp",
+      "description": "206+ tools across 16 integrations including Slack, Gmail, Discord, WhatsApp, LinkedIn, Twitter/X. Uses Chrome extension for browser session auth — no API keys needed for many services.",
+      "pros": [
+        "206+ tools — most comprehensive communication MCP",
+        "Chrome extension extracts auth from browser sessions",
+        "No API keys for many services"
+      ],
+      "cons": [
+        "Requires Chrome extension installation",
+        "JavaScript/TypeScript — heavier than Rust",
+        "Multi-profile setup can be complex"
+      ],
+      "useCase": "Social media automation, email, chat, calendar integration",
+      "config": {
+        "claude": "// Install Chrome extension first\n{\"mcpServers\": {\"neo\": {\"command\": \"npx\", \"args\": [\"-y\", \"neo-mcp@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"neo\": {\"command\": \"npx\", \"args\": [\"-y\", \"neo-mcp@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"neo\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"neo-mcp@latest\"]\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Slack Official MCP",
+      "maker": "Slack",
+      "pricing": "Free",
+      "url": "https://api.slack.com/mcp?ref=curated-mcp",
+      "description": "Official remote MCP server from Slack. OAuth-based connection without custom bot app. Search channels, read threads, post messages.",
+      "pros": [
+        "Official first-party server",
+        "OAuth — no bot token management",
+        "Remote MCP — no local process"
+      ],
+      "cons": [
+        "Requires Slack OAuth approval",
+        "Limited to workspace permissions",
+        "Remote-only — no offline use"
+      ],
+      "useCase": "Slack automation, support triage, team notifications",
+      "config": {
+        "claude": "// Remote MCP via OAuth\n{\"mcpServers\": {\"slack\": {\"url\": \"https://mcp.slack.com\"}}}",
+        "cursor": "{\"mcpServers\": {\"slack\": {\"url\": \"https://mcp.slack.com\"}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"slack\": {\n      \"url\": \"https://mcp.slack.com\"\n    }\n  }\n}"
+      }
+    }
+  ],
+  "failed": []
+}

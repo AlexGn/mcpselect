@@ -1,0 +1,152 @@
+{
+  "date": "2026-06-08T13:28:26.929Z",
+  "category": "databases",
+  "test_framework_version": "2.0.0",
+  "mcp_sdk_version": "1.0.0",
+  "test_environment": "macOS, Node.js v25.7.0",
+  "servers": [
+    {
+      "server": "SQLite MCP",
+      "tool_count": 8,
+      "tests": [
+        {
+          "name": "list_tables",
+          "status": "passed",
+          "latency_ms": 7,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"[\\n  {\\n    \\\"name\\\": \\\"benchmark_test\\\"\\n  }\\n]\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "describe_table",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"[\\n  {\\n    \\\"cid\\\": 0,\\n    \\\"name\\\": \\\"id\\\",\\n    \\\"type\\\": \\\"INTEGER\\\",\\n    \\\"notnull\\\": 0,\\n    \\\"dflt_value\\\": null,\\n    \\\"pk\\\": 1\\n  },\\n  {\\n    \\\"cid\\\": 1,\\n    \\\"name\\\": \\\"name\\\",\\n    \\\"type\\\": \\\"TEXT\\\",\\n    \\\"notnull\\\": 0,\\n    \\\"dflt_value\\\": null,\\n    \\\"pk\\\": 0\\n  },\\n  {\\n    \\\"cid\\\": 2,\\n    \\\"name\\\": \\\"score\\\",\\n    \\\"type\\\": \\\"REAL\\\",\\n    \\\"notnull\\\": 0,\\n    \\\"dflt_value\\\": null,\\n    \\\"pk\\\": 0\\n  }\\n]\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "query",
+          "status": "passed",
+          "latency_ms": 1,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"[\\n  {\\n    \\\"id\\\": 1,\\n    \\\"name\\\": \\\"Test\\\",\\n    \\\"score\\\": 99.9\\n  }\\n]\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "sample",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"[\\n  {\\n    \\\"id\\\": 1,\\n    \\\"name\\\": \\\"Test\\\",\\n    \\\"score\\\": 99.9\\n  }\\n]\"}]}",
+          "error": null,
+          "reason": null
+        },
+        {
+          "name": "schema",
+          "status": "passed",
+          "latency_ms": 2,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"dbPath\\\": \\\"/tmp/claude-501/mcp-db-test-MxcQWf/benchmark.db\\\",\\n  \\\"exists\\\": true,\\n  \\\"size\\\": 8192,\\n  \\\"lastModified\\\": \\\"Mon Jun 08 2026 16:26:50 GMT+0300 (Eastern European Summer Time)\\\",\\n  \\\"tableCount\\\": 1\\n}\"}]}",
+          "error": null,
+          "reason": null
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 100,
+        "avg_latency_ms": 3,
+        "p50_latency_ms": 2,
+        "p90_latency_ms": 7
+      },
+      "connect_time_ms": 1293,
+      "package": "mcp-sqlite@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    },
+    {
+      "server": "PostgreSQL MCP",
+      "package": "mcp-postgres@latest",
+      "tool_count": 0,
+      "tests": [],
+      "overall": {
+        "total_tests": 0,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 0,
+        "avg_latency_ms": 0,
+        "p50_latency_ms": 0,
+        "p90_latency_ms": 0
+      },
+      "connect_time_ms": 5137,
+      "discovery_status": "auth_required",
+      "error": "MCP error -1: Connection closed",
+      "auth_triage": "free-to-test",
+      "env_var": null
+    },
+    {
+      "server": "Redis MCP",
+      "tool_count": 6,
+      "tests": [
+        {
+          "name": "list_tables",
+          "status": "failed",
+          "latency_ms": 10548,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Error: Reached the max retries per request limit (which is 20). Refer to \\\"maxRetriesPerRequest\\\" option for details.\"}],\"isError\":true}",
+          "error": null,
+          "reason": "Validation failed"
+        },
+        {
+          "name": "describe_table",
+          "status": "error",
+          "latency_ms": 30002,
+          "output": null,
+          "error": "MCP error -2: Request timed out",
+          "reason": "MCP error -2: Request timed out"
+        },
+        {
+          "name": "query",
+          "status": "failed",
+          "latency_ms": 1539,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Error: Reached the max retries per request limit (which is 20). Refer to \\\"maxRetriesPerRequest\\\" option for details.\"}],\"isError\":true}",
+          "error": null,
+          "reason": "Validation failed"
+        },
+        {
+          "name": "sample",
+          "status": "error",
+          "latency_ms": 30000,
+          "output": null,
+          "error": "MCP error -2: Request timed out",
+          "reason": "MCP error -2: Request timed out"
+        },
+        {
+          "name": "schema",
+          "status": "failed",
+          "latency_ms": 11039,
+          "output": "{\"content\":[{\"type\":\"text\",\"text\":\"Error: Reached the max retries per request limit (which is 20). Refer to \\\"maxRetriesPerRequest\\\" option for details.\"}],\"isError\":true}",
+          "error": null,
+          "reason": "Validation failed"
+        }
+      ],
+      "overall": {
+        "total_tests": 5,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 0,
+        "pass_rate": 0,
+        "avg_latency_ms": 16626,
+        "p50_latency_ms": 11039,
+        "p90_latency_ms": 30002
+      },
+      "connect_time_ms": 1158,
+      "package": "mcp-redis@latest",
+      "auth_triage": "free-to-test",
+      "env_var": null,
+      "discovery_status": "ready"
+    }
+  ]
+}

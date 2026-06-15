@@ -1,0 +1,130 @@
+{
+  "servers": [
+    {
+      "name": "Playwright MCP",
+      "maker": "Microsoft",
+      "pricing": "Free",
+      "url": "https://github.com/microsoft/playwright-mcp?ref=curated-mcp",
+      "description": "Microsoft's Playwright exposed as an MCP server. Cross-browser automation for Chromium, Firefox, and WebKit.",
+      "pros": [
+        "Cross-browser support",
+        "Rich accessibility-based selectors",
+        "Strong debugging tools"
+      ],
+      "cons": [
+        "Heavier than Puppeteer",
+        "Longer cold start on first run"
+      ],
+      "useCase": "Cross-browser testing, scraping, and automation workflows",
+      "config": {
+        "claude": "{\"mcpServers\": {\"playwright\": {\"command\": \"npx\", \"args\": [\"-y\", \"@playwright/mcp@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"playwright\": {\"command\": \"npx\", \"args\": [\"-y\", \"@playwright/mcp@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"playwright\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@playwright/mcp@latest\"]\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Puppeteer MCP",
+      "maker": "Google",
+      "pricing": "Free",
+      "url": "https://github.com/puppeteer/puppeteer?ref=curated-mcp",
+      "description": "Google's Puppeteer exposed as an MCP server. Chrome-only but lighter weight than Playwright. Ideal for teams already invested in the Chrome DevTools protocol.",
+      "pros": [
+        "Lighter than Playwright",
+        "Deep Chrome integration",
+        "Faster startup on single-browser tasks"
+      ],
+      "cons": [
+        "Chrome only",
+        "Smaller community than Playwright"
+      ],
+      "useCase": "Chrome DevTools protocol workflows, PDF generation",
+      "config": {
+        "claude": "{\"mcpServers\": {\"puppeteer\": {\"command\": \"npx\", \"args\": [\"-y\", \"@puppeteer/mcp@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"puppeteer\": {\"command\": \"npx\", \"args\": [\"-y\", \"@puppeteer/mcp@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"puppeteer\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@puppeteer/mcp@latest\"]\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Firecrawl MCP",
+      "maker": "Mendable",
+      "pricing": "Freemium",
+      "url": "https://github.com/mendableai/firecrawl-mcp?ref=curated-mcp",
+      "description": "Firecrawl combines scraping with LLM-ready data extraction. Cleans HTML into structured markdown, removing ads and navigation noise.",
+      "pros": [
+        "Cleans HTML to markdown automatically",
+        "Handles JavaScript rendering",
+        "Free tier generous"
+      ],
+      "cons": [
+        "Slower than Playwright on simple tasks",
+        "Freemium limits on high volume"
+      ],
+      "useCase": "Knowledge base ingestion, RAG pipelines, content migration",
+      "config": {
+        "claude": "{\"mcpServers\": {\"firecrawl\": {\"command\": \"npx\", \"args\": [\"-y\", \"firecrawl-mcp@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"firecrawl\": {\"command\": \"npx\", \"args\": [\"-y\", \"firecrawl-mcp@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"firecrawl\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"firecrawl-mcp@latest\"]\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Browserbase MCP",
+      "maker": "Browserbase",
+      "pricing": "$49/mo",
+      "url": "https://www.browserbase.com/?utm_source=curated-mcp&utm_medium=directory&utm_campaign=install",
+      "description": "Browserbase is a hosted browser infrastructure with an MCP wrapper. You don't manage browsers \u2014 they do. Stealth mode and session persistence are built in.",
+      "pros": [
+        "Zero infrastructure to manage",
+        "Stealth mode built-in",
+        "Session persistence"
+      ],
+      "cons": [
+        "$49/month minimum",
+        "Vendor lock-in risk",
+        "Slower on cold starts"
+      ],
+      "useCase": "Teams without DevOps, stealth scraping, persistent sessions",
+      "config": {
+        "claude": "// Requires BROWSERBASE_API_KEY env var\n{\"mcpServers\": {\"browserbase\": {\"command\": \"npx\", \"args\": [\"-y\", \"@browserbase/mcp@latest\"], \"env\": {\"BROWSERBASE_API_KEY\": \"your-key\"}}}}",
+        "cursor": "// Requires BROWSERBASE_API_KEY env var\n{\"mcpServers\": {\"browserbase\": {\"command\": \"npx\", \"args\": [\"-y\", \"@browserbase/mcp@latest\"], \"env\": {\"BROWSERBASE_API_KEY\": \"your-key\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"browserbase\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@browserbase/mcp@latest\"],\n      \"env\": {\n        \"BROWSERBASE_API_KEY\": \"your-key\"\n      }\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Skyvern MCP",
+      "maker": "Skyvern",
+      "pricing": "Open Source",
+      "url": "https://github.com/Skyvern-AI/skyvern?ref=curated-mcp",
+      "description": "Skyvern uses AI to navigate websites without explicit selectors. It 'understands' the page and decides what to click. Innovative but slower on complex multi-step flows.",
+      "pros": [
+        "No selectors needed \u2014 AI-driven navigation",
+        "Open source",
+        "Innovative approach"
+      ],
+      "cons": [
+        "Slow on complex DOMs",
+        "Lower reliability on untested sites",
+        "Higher token costs"
+      ],
+      "useCase": "Exploratory automation, rapidly changing UIs",
+      "config": {
+        "claude": "{\"mcpServers\": {\"skyvern\": {\"command\": \"npx\", \"args\": [\"-y\", \"@skyvern/mcp@latest\"]}}}",
+        "cursor": "{\"mcpServers\": {\"skyvern\": {\"command\": \"npx\", \"args\": [\"-y\", \"@skyvern/mcp@latest\"]}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"skyvern\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@skyvern/mcp@latest\"]\n    }\n  }\n}"
+      }
+    }
+  ],
+  "failed": [
+    {
+      "name": "Stagehand MCP",
+      "reason": "We have not yet completed a full test run. Requires auth setup we have not evaluated."
+    },
+    {
+      "name": "Fetch MCP",
+      "reason": "We have not tested this for JavaScript-rendered SPAs yet."
+    },
+    {
+      "name": "Markdownify MCP",
+      "reason": "Not yet evaluated in our browser automation test suite."
+    }
+  ]
+}

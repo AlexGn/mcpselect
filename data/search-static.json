@@ -1,0 +1,120 @@
+{
+  "servers": [
+    {
+      "name": "Tavily MCP",
+      "maker": "Tavily (Nebius)",
+      "pricing": "Freemium",
+      "url": "https://github.com/tavily-ai/tavily-mcp?ref=curated-mcp",
+      "description": "RAG-focused search with native LangChain/LlamaIndex integration. Specializes in deep research with extract and crawl capabilities.",
+      "pros": [
+        "Native LangChain/LlamaIndex integration",
+        "Extract and crawl capabilities",
+        "RAG-optimized results"
+      ],
+      "cons": [
+        "Requires API key for all searches",
+        "Freemium tier limited to 1,000 queries/month",
+        "Acquired by Nebius — future direction uncertain"
+      ],
+      "useCase": "Research, RAG pipelines, content extraction",
+      "config": {
+        "claude": "// Requires TAVILY_API_KEY env var\n{\"mcpServers\": {\"tavily\": {\"command\": \"npx\", \"args\": [\"-y\", \"tavily-mcp@latest\"], \"env\": {\"TAVILY_API_KEY\": \"your-key\"}}}}",
+        "cursor": "{\"mcpServers\": {\"tavily\": {\"command\": \"npx\", \"args\": [\"-y\", \"tavily-mcp@latest\"], \"env\": {\"TAVILY_API_KEY\": \"your-key\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"tavily\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"tavily-mcp@latest\"],\n      \"env\": {\"TAVILY_API_KEY\": \"your-key\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Exa MCP",
+      "maker": "Exa Labs",
+      "pricing": "Freemium",
+      "url": "https://github.com/exa-labs/exa-mcp?ref=curated-mcp",
+      "description": "Semantic/neural search that finds conceptually related content. Best for research and discovery where keyword search fails.",
+      "pros": [
+        "Semantic search — finds conceptually related content",
+        "4,100 GitHub stars — strong community",
+        "Neural search for research tasks"
+      ],
+      "cons": [
+        "Requires API key",
+        "Consolidated from 9 tools to 4 (less granular)",
+        "Not ideal for simple keyword lookups"
+      ],
+      "useCase": "Research, concept discovery, semantic matching",
+      "config": {
+        "claude": "// Requires EXA_API_KEY env var\n{\"mcpServers\": {\"exa\": {\"command\": \"npx\", \"args\": [\"-y\", \"exa-mcp-server@latest\"], \"env\": {\"EXA_API_KEY\": \"your-key\"}}}}",
+        "cursor": "{\"mcpServers\": {\"exa\": {\"command\": \"npx\", \"args\": [\"-y\", \"exa-mcp-server@latest\"], \"env\": {\"EXA_API_KEY\": \"your-key\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"exa\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"exa-mcp-server@latest\"],\n      \"env\": {\"EXA_API_KEY\": \"your-key\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Brave Search MCP",
+      "maker": "Brave Software",
+      "pricing": "$5/mo credit",
+      "url": "https://github.com/brave/brave-search-mcp?ref=curated-mcp",
+      "description": "Privacy-first general-purpose keyword search. 6 tools, good for specific lookups and factual queries.",
+      "pros": [
+        "Privacy-first search",
+        "6 specialized search tools",
+        "Good for factual lookups"
+      ],
+      "cons": [
+        "Dropped unlimited free tier (Feb 2026)",
+        "Now $5/mo minimum credit",
+        "STDIO only in v2.6+"
+      ],
+      "useCase": "General search, keyword lookups, privacy-focused queries",
+      "config": {
+        "claude": "// Requires BRAVE_API_KEY env var\n{\"mcpServers\": {\"brave\": {\"command\": \"npx\", \"args\": [\"-y\", \"brave-search-mcp-server@latest\"], \"env\": {\"BRAVE_API_KEY\": \"your-key\"}}}}",
+        "cursor": "{\"mcpServers\": {\"brave\": {\"command\": \"npx\", \"args\": [\"-y\", \"brave-search-mcp-server@latest\"], \"env\": {\"BRAVE_API_KEY\": \"your-key\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"brave\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"brave-search-mcp-server@latest\"],\n      \"env\": {\"BRAVE_API_KEY\": \"your-key\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "Perplexity MCP",
+      "maker": "Perplexity AI",
+      "pricing": "Freemium",
+      "url": "https://github.com/perplexity-ai/mcp?ref=curated-mcp",
+      "description": "Answer engine that returns synthesized answers instead of raw links. Best for quick facts and summaries.",
+      "pros": [
+        "Returns synthesized answers, not just links",
+        "2,000 GitHub stars",
+        "Good for quick factual queries"
+      ],
+      "cons": [
+        "Requires API key",
+        "CTO announced shift away from MCP (March 2026)",
+        "Less suitable for raw research tasks"
+      ],
+      "useCase": "Quick facts, summaries, answer generation",
+      "config": {
+        "claude": "// Requires PERPLEXITY_API_KEY env var\n{\"mcpServers\": {\"perplexity\": {\"command\": \"npx\", \"args\": [\"-y\", \"perplexity-mcp-server@latest\"], \"env\": {\"PERPLEXITY_API_KEY\": \"your-key\"}}}}",
+        "cursor": "{\"mcpServers\": {\"perplexity\": {\"command\": \"npx\", \"args\": [\"-y\", \"perplexity-mcp-server@latest\"], \"env\": {\"PERPLEXITY_API_KEY\": \"your-key\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"perplexity\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"perplexity-mcp-server@latest\"],\n      \"env\": {\"PERPLEXITY_API_KEY\": \"your-key\"}\n    }\n  }\n}"
+      }
+    },
+    {
+      "name": "mcp-omnisearch",
+      "maker": "spences10",
+      "pricing": "Free",
+      "url": "https://github.com/spences10/mcp-omnisearch?ref=curated-mcp",
+      "description": "Multi-provider search aggregator. Unifies Tavily, Brave, Kagi, Exa, Perplexity, Linkup, Firecrawl, and GitHub behind a single interface.",
+      "pros": [
+        "13 search providers in one server",
+        "Auto-routing to best provider",
+        "Docker deployment available"
+      ],
+      "cons": [
+        "Requires multiple API keys for full functionality",
+        "Complex configuration",
+        "Some providers still require paid tiers"
+      ],
+      "useCase": "Multi-provider search, redundancy, research pipelines",
+      "config": {
+        "claude": "// Requires provider API keys\n{\"mcpServers\": {\"omnisearch\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-omnisearch@latest\"], \"env\": {\"TAVILY_API_KEY\": \"your-key\", \"BRAVE_API_KEY\": \"your-key\"}}}}",
+        "cursor": "{\"mcpServers\": {\"omnisearch\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-omnisearch@latest\"], \"env\": {\"TAVILY_API_KEY\": \"your-key\", \"BRAVE_API_KEY\": \"your-key\"}}}}",
+        "vscode": "// .vscode/mcp.json\n{\n  \"servers\": {\n    \"omnisearch\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-omnisearch@latest\"],\n      \"env\": {\"TAVILY_API_KEY\": \"your-key\", \"BRAVE_API_KEY\": \"your-key\"}\n    }\n  }\n}"
+      }
+    }
+  ],
+  "failed": []
+}
