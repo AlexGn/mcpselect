@@ -108,7 +108,7 @@ async function main() {
     date: new Date().toISOString(),
     category: "search",
     test_framework_version: "2.0.0",
-    mcp_sdk_version: "1.29.0",
+    mcp_sdk_version: "1.0.0",
     test_environment: "macOS, Node.js v25.7.0",
     servers: allResults,
   }

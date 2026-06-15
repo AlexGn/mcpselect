@@ -129,7 +129,7 @@ async function main() {
     date: new Date().toISOString(),
     category: "browser-automation",
     test_framework_version: "2.0.0",
-    mcp_sdk_version: "1.29.0",
+    mcp_sdk_version: "1.0.0",
     test_environment: "macOS, Node.js v25.7.0",
     test_page_url: localUrl,
     public_test_page_url: PUBLIC_TEST_PAGE_URL,
