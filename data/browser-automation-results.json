@@ -2,7 +2,7 @@
   "date": "2026-06-08T13:27:13.097Z",
   "category": "browser-automation",
   "test_framework_version": "2.0.0",
-  "mcp_sdk_version": "1.29.0",
+  "mcp_sdk_version": "1.0.0",
   "test_environment": "macOS, Node.js v25.7.0",
   "test_page_url": "http://127.0.0.1:54166",
   "public_test_page_url": null,
